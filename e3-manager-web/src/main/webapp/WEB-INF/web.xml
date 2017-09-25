@@ -21,6 +21,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>springMVC</servlet-name>
+  	<!-- /表示拦截除了jsp之外的所有资源 /*表示拦截所有资源 -->
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   <!-- 解决post乱码问题 -->

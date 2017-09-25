@@ -22,6 +22,9 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
+	<!-- 放行静态资源 -->
+	<mvc:default-servlet-handler/>
+	
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="e3-manager-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.239.129:2181"/>
