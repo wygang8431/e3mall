@@ -66,6 +66,7 @@ var E3 = {
     initPicUpload : function(data){
     	$(".picFileUpload").each(function(i,e){
     		var _ele = $(e);
+    		//移除兄弟元素div，再添加这个兄弟元素（如果是添加，直接添加即可，但是修改需要先移除再添加）
     		_ele.siblings("div.pics").remove();
     		_ele.after('\
     			<div class="pics">\

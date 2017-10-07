@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.e3mall.pojo.DataGridResult;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
+import cn.e3mall.utils.E3Result;
 
 
 @Controller
@@ -27,5 +28,10 @@ public class ItemController {
 	public DataGridResult findAllitems(int page,int rows){
 		DataGridResult result= itemService.findAllitems(page,rows);
 		return result;	
+	}
+	@RequestMapping("/item/save")
+	@ResponseBody
+	public E3Result saveitem(TbItem item,String desc){
+		return itemService.saveitem(item, desc);
 	}
 }
