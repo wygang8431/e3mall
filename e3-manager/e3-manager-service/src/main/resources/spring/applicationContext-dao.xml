@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	<!-- 引入外部配置  -->
-	<context:property-placeholder location="classpath:conf/db.properties" />
+	<context:property-placeholder location="classpath:properties/*.properties" />
 	<!-- 配置数据库连接池  -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
 		<property name="driverClassName" value="${jdbc.driver}" />
@@ -27,4 +27,6 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" >
 		<property name="basePackage" value="cn.e3mall.mapper"/>
 	</bean>
+	<!-- 配置工具类jedis层包扫描 -->
+	<context:component-scan base-package="cn.e3mall.redis"/>
 </beans>
